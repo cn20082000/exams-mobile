@@ -98,6 +98,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/between_element_quadruple"
                     android:text="@string/login"
+                    android:onClick="@{() -> presenter.login()}"
 
                     app:layout_constraintEnd_toEndOf="@id/gl_end"
                     app:layout_constraintStart_toStartOf="@id/gl_start"

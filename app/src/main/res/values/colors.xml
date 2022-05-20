@@ -43,6 +43,11 @@
     <color name="transparent_90">#E6FFFFFF</color>
     <color name="transparent_100">#FFFFFF</color>
 
+    <color name="success">#009944</color>
+    <color name="error">#cf000f</color>
+    <color name="warning">#f0541e</color>
+    <color name="info">#63c0df</color>
+
     <color name="primary">@color/blue_500</color>
     <color name="primary_dark">@color/blue_700</color>
     <color name="primary_light">@color/blue_200</color>

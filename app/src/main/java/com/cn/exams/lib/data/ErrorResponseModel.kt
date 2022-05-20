@@ -1,6 +1,7 @@
 package com.cn.exams.lib.data
 
 import android.util.Log
+import com.cn.exams.common.Constant
 
 data class ErrorResponseModel(
     val statusCode: Int,
@@ -9,6 +10,9 @@ data class ErrorResponseModel(
     val stacktrace: String? = null,
 ) {
     fun log() {
-        Log.e(error.toString(), stacktrace ?: message)
+        Log.e(error.toString(),
+            if (Constant.IS_DEBUG) stacktrace
+                ?: message else ""
+        )
     }
 }
