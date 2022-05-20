@@ -2,6 +2,7 @@ package com.cn.exams.ui.login
 
 import android.view.LayoutInflater
 import android.view.inputmethod.EditorInfo
+import com.cn.exams.R
 import com.cn.exams.core.BaseFragment
 import com.cn.exams.databinding.FragmentLoginBinding
 import com.cn.exams.lib.data.ErrorEnum
@@ -45,12 +46,16 @@ class LoginFragment
     override fun loginSuccess() {
         binding.swp.isRefreshing = false
         binding.btnLogin.isEnabled = true
-        Mess.success(requireActivity(), "Dang nhap thanh cong")
+        Mess.success(requireActivity(), getString(R.string.login_success))
     }
 
     override fun loginFailed(error: ErrorEnum) {
         binding.swp.isRefreshing = false
         binding.btnLogin.isEnabled = true
         Mess.error(requireActivity(), error.message(resources))
+    }
+
+    override fun requestRegister() {
+        navigation.navigate(R.id.action_fragment_login_to_fragment_register)
     }
 }

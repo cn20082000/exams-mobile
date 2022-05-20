@@ -8,10 +8,14 @@ interface LoginContract {
         fun requestLogin()
         fun loginSuccess()
         fun loginFailed(error: ErrorEnum)
+
+        fun requestRegister()
     }
 
     interface Presenter : BaseContract.Presenter {
         fun login()
         fun login(username: String, password: String)
+
+        fun register()
     }
 }

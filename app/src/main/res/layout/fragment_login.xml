@@ -81,6 +81,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/between_element"
                     android:layout_marginBottom="@dimen/between_element_quadruple"
+                    android:onClick="@{() -> presenter.register()}"
                     android:text="@string/register" />
             </LinearLayout>
         </ScrollView>

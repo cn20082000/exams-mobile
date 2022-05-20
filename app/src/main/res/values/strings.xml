@@ -9,4 +9,21 @@
     <string name="invalid_username_length">Tên đăng nhập phải có độ dài từ 5 đến 32 kí tự</string>
     <string name="missing_password">Mật khẩu không được để trống</string>
     <string name="invalid_password_length">Mật khẩu phải có độ dài từ 5 đến 32 kí tự</string>
+    <string name="name">Họ và tên</string>
+    <string name="birth">Ngày sinh</string>
+    <string name="address">Địa chỉ</string>
+    <string name="tel">Số điện thoại</string>
+    <string name="confirm_password">Xác nhận mật khẩu</string>
+    <string name="policy">Đồng ý với điều khoản, mặc dù chúng tôi không có điều khoản nào cả.</string>
+    <string name="register_success">Đăng kí thành công</string>
+    <string name="login_success">Đăng nhập thành công</string>
+    <string name="invalid_cf_password">Mật khẩu xác nhận chưa đúng</string>
+    <string name="invalid_birth_format">Định dạng ngày sinh chưa đúng</string>
+    <string name="missing_user_name">Họ và tên không được để trống</string>
+    <string name="invalid_user_name_length">Họ và tên phải có độ dài lớn hơn hoặc bằng 5 kí tự</string>
+    <string name="missing_birth">Ngày sinh không được để trống</string>
+    <string name="missing_tel">Số điện thoại không được để trống</string>
+    <string name="exist_username">Tên đăng nhập đã tồn tại</string>
+    <string name="wrong_username_password">Sai tên đăng nhập hoặc mật khẩu</string>
+    <string name="date_format">%1$d/%2$d/%3$d</string>
 </resources>

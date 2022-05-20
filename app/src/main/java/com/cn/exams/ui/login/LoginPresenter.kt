@@ -21,4 +21,8 @@ class LoginPresenter(
             .onFailure { view.loginFailed(it.error) }
             .call()
     }
+
+    override fun register() {
+        view.requestRegister()
+    }
 }

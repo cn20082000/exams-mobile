@@ -8,5 +8,17 @@
     <fragment
         android:id="@+id/fragment_login"
         android:name="com.cn.exams.ui.login.LoginFragment"
-        tools:layout="@layout/fragment_login"/>
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_fragment_login_to_fragment_register"
+            app:destination="@id/fragment_register"
+            app:enterAnim="@anim/anim_slide_in_left"
+            app:exitAnim="@anim/anim_slide_out_right"
+            app:popEnterAnim="@anim/anim_slide_in_right"
+            app:popExitAnim="@anim/anim_slide_out_left" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_register"
+        android:name="com.cn.exams.ui.login.register.RegisterFragment"
+        tools:layout="@layout/fragment_register"/>
 </navigation>
