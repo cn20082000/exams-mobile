@@ -18,25 +18,12 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <androidx.constraintlayout.widget.Guideline
-                    android:id="@+id/gl_start"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-
-                    app:layout_constraintGuide_begin="@dimen/between_element_quadruple" />
-
-                <androidx.constraintlayout.widget.Guideline
-                    android:id="@+id/gl_end"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-
-                    app:layout_constraintGuide_end="@dimen/between_element_quadruple" />
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/between_element_quadruple"
+                android:orientation="vertical"
+                android:gravity="center_horizontal">
 
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/iv_logo"
@@ -44,23 +31,17 @@
                     android:layout_height="@dimen/image_huge"
                     android:layout_marginTop="@dimen/between_element_8x"
 
-                    app:layout_constraintEnd_toEndOf="@id/gl_end"
-                    app:layout_constraintStart_toStartOf="@id/gl_start"
-                    app:layout_constraintTop_toTopOf="parent"
                     app:srcCompat="@drawable/ic_launcher_foreground"
                     app:tint="@color/primary" />
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/til_username"
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/between_element_8x"
                     android:hint="@string/username"
 
-                    app:endIconMode="clear_text"
-                    app:layout_constraintEnd_toEndOf="@id/gl_end"
-                    app:layout_constraintStart_toStartOf="@id/gl_start"
-                    app:layout_constraintTop_toBottomOf="@id/iv_logo">
+                    app:endIconMode="clear_text">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/et_username"
@@ -73,15 +54,12 @@
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/til_password"
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/between_element"
                     android:hint="@string/password"
 
-                    app:endIconMode="password_toggle"
-                    app:layout_constraintEnd_toEndOf="@id/gl_end"
-                    app:layout_constraintStart_toStartOf="@id/gl_start"
-                    app:layout_constraintTop_toBottomOf="@id/til_username">
+                    app:endIconMode="password_toggle">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/et_password"
@@ -94,28 +72,21 @@
 
                 <Button
                     android:id="@+id/btn_login"
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/between_element_quadruple"
                     android:text="@string/login"
-                    android:onClick="@{() -> presenter.login()}"
-
-                    app:layout_constraintEnd_toEndOf="@id/gl_end"
-                    app:layout_constraintStart_toStartOf="@id/gl_start"
-                    app:layout_constraintTop_toBottomOf="@id/til_password" />
+                    android:onClick="@{() -> presenter.login()}" />
 
                 <Button
                     android:id="@+id/btn_register"
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/between_element"
+                    android:layout_marginBottom="@dimen/between_element_quadruple"
                     android:text="@string/register"
-                    style="?attr/materialButtonOutlinedStyle"
-
-                    app:layout_constraintEnd_toEndOf="@id/gl_end"
-                    app:layout_constraintStart_toStartOf="@id/gl_start"
-                    app:layout_constraintTop_toBottomOf="@id/btn_login" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                    style="?attr/materialButtonOutlinedStyle" />
+            </LinearLayout>
         </ScrollView>
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 </layout>
