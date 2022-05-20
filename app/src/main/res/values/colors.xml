@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="blue_50">#E3F2FD</color>
+    <color name="blue_100">#BBDEFB</color>
+    <color name="blue_200">#90CAF9</color>
+    <color name="blue_300">#64B5F6</color>
+    <color name="blue_400">#42A5F5</color>
+    <color name="blue_500">#2196F3</color>
+    <color name="blue_600">#1E88E5</color>
+    <color name="blue_700">#1976D2</color>
+    <color name="blue_800">#1565C0</color>
+    <color name="blue_900">#0D47A1</color>
+    <color name="lime_50">#F9FBE7</color>
+    <color name="lime_100">#F0F4C3</color>
+    <color name="lime_200">#E6EE9C</color>
+    <color name="lime_300">#DCE775</color>
+    <color name="lime_400">#D4E157</color>
+    <color name="lime_500">#CDDC39</color>
+    <color name="lime_600">#C0CA33</color>
+    <color name="lime_700">#AFB42B</color>
+    <color name="lime_800">#9E9D24</color>
+    <color name="lime_900">#827717</color>
+    <color name="shadow_0">#00000000</color>
+    <color name="shadow_10">#1A000000</color>
+    <color name="shadow_20">#33000000</color>
+    <color name="shadow_30">#4D000000</color>
+    <color name="shadow_40">#66000000</color>
+    <color name="shadow_50">#80000000</color>
+    <color name="shadow_60">#99000000</color>
+    <color name="shadow_70">#B3000000</color>
+    <color name="shadow_80">#CC000000</color>
+    <color name="shadow_90">#E6000000</color>
+    <color name="shadow_100">#FF000000</color>
+    <color name="transparent_0">#00FFFFFF</color>
+    <color name="transparent_10">#1AFFFFFF</color>
+    <color name="transparent_20">#33FFFFFF</color>
+    <color name="transparent_30">#4DFFFFFF</color>
+    <color name="transparent_40">#66FFFFFF</color>
+    <color name="transparent_50">#80FFFFFF</color>
+    <color name="transparent_60">#99FFFFFF</color>
+    <color name="transparent_70">#B3FFFFFF</color>
+    <color name="transparent_80">#CCFFFFFF</color>
+    <color name="transparent_90">#E6FFFFFF</color>
+    <color name="transparent_100">#FFFFFF</color>
+
+    <color name="primary">@color/blue_500</color>
+    <color name="primary_dark">@color/blue_700</color>
+    <color name="primary_light">@color/blue_200</color>
+    <color name="secondary">@color/lime_500</color>
+    <color name="secondary_dark">@color/lime_700</color>
+    <color name="secondary_light">@color/lime_200</color>
+
+    <color name="primary_text_on_white">@color/shadow_100</color>
+    <color name="secondary_text_on_white">@color/shadow_50</color>
+    <color name="primary_text_on_primary">@color/transparent_100</color>
+    <color name="secondary_text_on_primary">@color/transparent_50</color>
+</resources>
