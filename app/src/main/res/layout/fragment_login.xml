@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="presenter"
             type="com.cn.exams.ui.login.LoginContract.Presenter" />
@@ -21,12 +22,11 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingHorizontal="@dimen/between_element_quadruple"
+                android:gravity="center_horizontal"
                 android:orientation="vertical"
-                android:gravity="center_horizontal">
+                android:paddingHorizontal="@dimen/between_element_quadruple">
 
                 <androidx.appcompat.widget.AppCompatImageView
-                    android:id="@+id/iv_logo"
                     android:layout_width="@dimen/image_huge"
                     android:layout_height="@dimen/image_huge"
                     android:layout_marginTop="@dimen/between_element_8x"
@@ -35,7 +35,6 @@
                     app:tint="@color/primary" />
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/til_username"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/between_element_8x"
@@ -47,13 +46,11 @@
                         android:id="@+id/et_username"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:singleLine="true"
-                        android:imeOptions="actionNext"/>
-
+                        android:imeOptions="actionNext"
+                        android:singleLine="true" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/til_password"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/between_element"
@@ -65,9 +62,8 @@
                         android:id="@+id/et_password"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:inputType="textPassword"
-                        android:imeOptions="actionDone"/>
-
+                        android:imeOptions="actionDone"
+                        android:inputType="textPassword" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <Button
@@ -75,17 +71,17 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/between_element_quadruple"
-                    android:text="@string/login"
-                    android:onClick="@{() -> presenter.login()}" />
+                    android:onClick="@{() -> presenter.login()}"
+                    android:text="@string/login" />
 
                 <Button
                     android:id="@+id/btn_register"
+                    style="?attr/materialButtonOutlinedStyle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/between_element"
                     android:layout_marginBottom="@dimen/between_element_quadruple"
-                    android:text="@string/register"
-                    style="?attr/materialButtonOutlinedStyle" />
+                    android:text="@string/register" />
             </LinearLayout>
         </ScrollView>
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
