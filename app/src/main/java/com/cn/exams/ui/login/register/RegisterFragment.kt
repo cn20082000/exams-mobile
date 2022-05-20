@@ -24,8 +24,15 @@ class RegisterFragment
         get() = binding::setPresenter
 
     override fun initUI() {
+        configToolbar()
         configSwp()
         configInput()
+    }
+
+    private fun configToolbar() {
+        binding.tb.setNavigationOnClickListener {
+            activity?.onBackPressed()
+        }
     }
 
     private fun configSwp() {
