@@ -1,10 +1,13 @@
 package com.cn.exams.data.repository
 
 import com.cn.exams.data.remote.api.BankApi
+import com.cn.exams.data.remote.request.BankRequest
 import com.cn.exams.data.remote.response.BankOverviewResponse
 import com.cn.exams.lib.data.LoadedAction
+import com.cn.exams.util.enumi.BankScopeEnum
 import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Dispatchers.IO
+import kotlinx.coroutines.Dispatchers.Main
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
@@ -12,15 +15,37 @@ class BankRepositoryImpl : BankRepository {
 
     private val bankApi = BankApi.getInstance()
 
-    override fun getMyBank(action: LoadedAction<List<BankOverviewResponse>>) {
-        CoroutineScope(Dispatchers.IO).launch {
+    override fun createBank(
+        name: String,
+        description: String,
+        scope: BankScopeEnum,
+        action: LoadedAction<BankOverviewResponse>
+    ) {
+        CoroutineScope(IO).launch {
             try {
-                val response = bankApi.getMyBank()
-                withContext(Dispatchers.Main) {
+                val response = bankApi.createBank(BankRequest(
+                    name, description, scope
+                ))
+                withContext(Main) {
                     action.onResponse(response)
                 }
             } catch (ex: Exception) {
-                withContext(Dispatchers.Main) {
+                withContext(Main) {
+                    action.onException(ex)
+                }
+            }
+        }
+    }
+
+    override fun getMyBank(action: LoadedAction<List<BankOverviewResponse>>) {
+        CoroutineScope(IO).launch {
+            try {
+                val response = bankApi.getMyBank()
+                withContext(Main) {
+                    action.onResponse(response)
+                }
+            } catch (ex: Exception) {
+                withContext(Main) {
                     action.onException(ex)
                 }
             }
@@ -28,14 +53,14 @@ class BankRepositoryImpl : BankRepository {
     }
 
     override fun getPublicBank(action: LoadedAction<List<BankOverviewResponse>>) {
-        CoroutineScope(Dispatchers.IO).launch {
+        CoroutineScope(IO).launch {
             try {
                 val response = bankApi.getPublicBank()
-                withContext(Dispatchers.Main) {
+                withContext(Main) {
                     action.onResponse(response)
                 }
             } catch (ex: Exception) {
-                withContext(Dispatchers.Main) {
+                withContext(Main) {
                     action.onException(ex)
                 }
             }

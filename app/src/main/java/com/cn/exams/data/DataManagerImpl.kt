@@ -6,6 +6,7 @@ import com.cn.exams.data.remote.response.RegisterResponse
 import com.cn.exams.data.repository.AuthenticationRepository
 import com.cn.exams.data.repository.BankRepository
 import com.cn.exams.lib.data.ResponseObject
+import com.cn.exams.util.enumi.BankScopeEnum
 import java.util.*
 
 class DataManagerImpl : DataManager {
@@ -36,6 +37,14 @@ class DataManagerImpl : DataManager {
                 it
             )
         }
+    }
+
+    override fun createBank(
+        name: String,
+        description: String,
+        scope: BankScopeEnum
+    ): ResponseObject<BankOverviewResponse> {
+        return ResponseObject { bankRepo.createBank(name, description, scope, it) }
     }
 
     override fun getMyBank(): ResponseObject<List<BankOverviewResponse>> {

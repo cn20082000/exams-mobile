@@ -35,4 +35,16 @@
     <string name="updated_at_bank">Cập nhật lần cuối ngày %1$s bởi %2$s</string>
     <string name="sample_content_description">Sample content description</string>
     <string name="sample_text">Duis non risus varius, vestibulum magna at, tempor eros. Curabitur.</string>
+    <string name="new_bank">Thêm ngân hàng mới</string>
+    <string name="bank_name">Tên ngân hàng câu hỏi</string>
+    <string name="description">Mô tả</string>
+    <string name="_private">Bí mật</string>
+    <string name="private_bank_des">Chỉ mình bạn có thể xem, sửa, xóa, sử dụng ngân hàng câu hỏi này.</string>
+    <string name="public_bank_des">Mọi người có thể xem và sử dụng ngân hàng của bạn cho các đề thi của họ, nhưng họ không có quyền sửa hoặc xóa ngân hàng câu hỏi này.</string>
+    <string name="add_new">Thêm mới</string>
+    <string name="update_bank">Cập nhật ngân hàng</string>
+    <string name="update">Cập nhật</string>
+    <string name="add_new_success">Thêm mới thành công</string>
+    <string name="missing_bank_name">Tên ngân hàng không được để trống</string>
+    <string name="invalid_bank_name_length">Tên ngân hàng phải có độ dài lớn hơn hoặc bằng 5 kí tự</string>
 </resources>

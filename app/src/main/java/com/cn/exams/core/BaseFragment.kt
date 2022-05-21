@@ -4,11 +4,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.addCallback
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.cn.exams.util.isNotNull
 
-abstract class BaseFragment<BD: ViewDataBinding, PS: BaseContract.Presenter>
+abstract class BaseFragment<BD : ViewDataBinding, PS : BaseContract.Presenter>
     : Fragment() {
 
     protected val binding: BD by lazy { setupBinding(layoutInflater) }
@@ -37,10 +39,20 @@ abstract class BaseFragment<BD: ViewDataBinding, PS: BaseContract.Presenter>
             initUI()
         }
 
+        (requireActivity() as BaseActivity<*, *>).registerBackPressedCallback(this::backPress)
         updateUI()
     }
 
     open fun initUI() {}
 
     open fun updateUI() {}
+
+    private fun backPress() {
+        if (navigation.popBackStack()) return
+        if (parentFragment?.parentFragment.isNotNull()) {
+            (parentFragment?.parentFragment as BaseFragment<*,*>).backPress()
+            return
+        }
+        (requireActivity() as BaseActivity<*, *>).realBackPressed()
+    }
 }

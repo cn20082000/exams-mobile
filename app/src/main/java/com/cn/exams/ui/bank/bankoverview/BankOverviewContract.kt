@@ -11,11 +11,15 @@ interface BankOverviewContract {
         fun requestSearch()
         fun searchSuccess(list: List<BankOverviewResponse>)
         fun searchFailed(error: ErrorEnum)
+
+        fun requestAddBank()
     }
 
     interface Presenter : BaseContract.Presenter {
         fun personalChange(isPublic: Boolean)
 
         fun search(keyword: String?)
+
+        fun addBank()
     }
 }

@@ -69,12 +69,11 @@
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
                     android:orientation="vertical"
-                    android:paddingHorizontal="@dimen/between_element_quadruple">
+                    android:padding="@dimen/between_element_quadruple">
 
                     <com.google.android.material.textfield.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/between_element_quadruple"
                         android:hint="@string/name"
 
                         app:endIconMode="clear_text">
@@ -154,6 +153,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:imeOptions="actionNext"
+                            android:inputType="textShortMessage"
                             android:text="@={username}" />
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -201,7 +201,7 @@
                         android:id="@+id/btn_register"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginVertical="@dimen/between_element_quadruple"
+                        android:layout_marginTop="@dimen/between_element_quadruple"
                         android:onClick="@{() -> presenter.register(name, birth, address, tel, username, password, cfPassword)}"
                         android:text="@string/register" />
                 </LinearLayout>

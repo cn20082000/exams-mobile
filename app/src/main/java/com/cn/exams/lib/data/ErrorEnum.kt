@@ -78,8 +78,8 @@ fun ErrorEnum.message(resources: Resources): String {
         ErrorEnum.REQUIRED_LOGIN -> ""
         ErrorEnum.NOT_FOUND_USER -> ""
         ErrorEnum.PERMISSION_REQUIRED -> ""
-        ErrorEnum.MISSING_BANK_NAME -> ""
-        ErrorEnum.INVALID_BANK_NAME_LENGTH -> ""
+        ErrorEnum.MISSING_BANK_NAME -> resources.getString(R.string.missing_bank_name)
+        ErrorEnum.INVALID_BANK_NAME_LENGTH -> resources.getString(R.string.invalid_bank_name_length)
         ErrorEnum.MISSING_BANK_SCOPE -> ""
         ErrorEnum.INVALID_BANK_SCOPE -> ""
         ErrorEnum.NOT_FOUND_BANK -> ""

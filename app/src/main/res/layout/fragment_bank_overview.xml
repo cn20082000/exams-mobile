@@ -80,6 +80,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/between_element_double"
             android:contentDescription="@string/sample_content_description"
+            android:onClick="@{() -> presenter.addBank()}"
 
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

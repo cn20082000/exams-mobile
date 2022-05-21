@@ -1,6 +1,7 @@
 package com.cn.exams.ui.bank.bankoverview
 
 import android.view.LayoutInflater
+import androidx.core.os.bundleOf
 import com.cn.exams.R
 import com.cn.exams.core.BaseFragment
 import com.cn.exams.data.remote.response.BankOverviewResponse
@@ -9,6 +10,7 @@ import com.cn.exams.lib.data.ErrorEnum
 import com.cn.exams.lib.data.message
 import com.cn.exams.lib.mess.Mess
 import com.cn.exams.ui.bank.bankoverview.adapter.BankOverviewRecyclerAdapter
+import com.cn.exams.ui.bank.edit.BankEditFragment
 
 class BankOverviewFragment
     : BaseFragment<FragmentBankOverviewBinding, BankOverviewContract.Presenter>(), BankOverviewContract.View {
@@ -64,5 +66,14 @@ class BankOverviewFragment
     override fun searchFailed(error: ErrorEnum) {
         binding.swp.isRefreshing = false
         Mess.error(requireActivity(), error.message(resources))
+    }
+
+    override fun requestAddBank() {
+        navigation.navigate(
+            R.id.action_fragment_bank_overview_to_fragment_bank_edit,
+            bundleOf(
+                BankEditFragment.ARGUMENT_MODE to BankEditFragment.MODE_ADD
+            )
+        )
     }
 }

@@ -4,6 +4,7 @@ import com.cn.exams.data.remote.response.BankOverviewResponse
 import com.cn.exams.data.remote.response.LoginResponse
 import com.cn.exams.data.remote.response.RegisterResponse
 import com.cn.exams.lib.data.ResponseObject
+import com.cn.exams.util.enumi.BankScopeEnum
 import java.util.*
 
 interface DataManager {
@@ -18,6 +19,11 @@ interface DataManager {
         tel: String
     ): ResponseObject<RegisterResponse>
 
+    fun createBank(
+        name: String,
+        description: String,
+        scope: BankScopeEnum
+    ): ResponseObject<BankOverviewResponse>
     fun getMyBank(): ResponseObject<List<BankOverviewResponse>>
     fun getPublicBank(): ResponseObject<List<BankOverviewResponse>>
 

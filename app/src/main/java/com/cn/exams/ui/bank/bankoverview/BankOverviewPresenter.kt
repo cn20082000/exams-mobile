@@ -2,6 +2,7 @@ package com.cn.exams.ui.bank.bankoverview
 
 import com.cn.exams.core.BasePresenter
 import com.cn.exams.data.remote.response.BankOverviewResponse
+import java.util.*
 
 class BankOverviewPresenter(
     view: BankOverviewContract.View
@@ -30,11 +31,17 @@ class BankOverviewPresenter(
         }
     }
 
+    override fun addBank() {
+        view.requestAddBank()
+    }
+
     private fun updateBank(keyword: String?, list: List<BankOverviewResponse>) {
         if (keyword.isNullOrBlank()) {
             view.searchSuccess(list)
         } else {
-            view.searchSuccess(list.filter { it.name.contains(keyword) })
+            view.searchSuccess(list.filter {
+                it.name.lowercase().contains(keyword.lowercase().trim())
+            })
         }
     }
 }
