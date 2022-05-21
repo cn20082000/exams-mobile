@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import com.cn.exams.R
 import com.cn.exams.core.BaseFragment
 import com.cn.exams.data.remote.response.BankOverviewResponse
+import com.cn.exams.data.remote.response.BankResponse
 import com.cn.exams.databinding.FragmentBankEditBinding
 import com.cn.exams.lib.data.ErrorEnum
 import com.cn.exams.lib.data.message
@@ -16,12 +17,12 @@ class BankEditFragment
     override val setupBinding: (LayoutInflater) -> FragmentBankEditBinding
         get() = FragmentBankEditBinding::inflate
     override val setupPresenter: () -> BankEditContract.Presenter
-        get() = { BankEditPresenter(this, mode) }
+        get() = { BankEditPresenter(this, mode, bank) }
     override val setupViewModel: (BankEditContract.Presenter) -> Unit
         get() = binding::setPresenter
 
     private val mode by lazy { arguments?.getInt(ARGUMENT_MODE) ?: MODE_ADD }
-    private val bank by lazy { arguments?.getParcelable<BankOverviewResponse>(ARGUMENT_BANK) }
+    private val bank by lazy { arguments?.getParcelable<BankResponse>(ARGUMENT_BANK) }
 
     override fun initUI() {
         configToolbar()
@@ -43,9 +44,9 @@ class BankEditFragment
             binding.tb.title = getString(R.string.update_bank)
             binding.swPersonal.isEnabled = false
             binding.btnAction.text = getString(R.string.update)
-            binding.etName.setText(bank?.name ?: "")
-            binding.etDescription.setText(bank?.description ?: "")
-            binding.swPersonal.isChecked = bank?.scope != BankScopeEnum.PERSONAL
+            binding.name = bank?.name ?: ""
+            binding.description = bank?.description ?: ""
+            binding.isPublic = bank?.scope != BankScopeEnum.PERSONAL
         }
     }
 

@@ -7,7 +7,8 @@ import com.cn.exams.data.remote.response.BankOverviewResponse
 import com.cn.exams.databinding.ItemBankOverviewBinding
 
 class BankOverviewRecyclerAdapter(
-    items: MutableList<BankOverviewResponse>
+    items: MutableList<BankOverviewResponse>,
+    private val onItemClick: (BankOverviewResponse) -> Unit
 ) : BaseRecyclerAdapter<BankOverviewResponse, BankOverviewViewHolder>(items) {
 
     override fun areContentsTheSame(
@@ -23,6 +24,7 @@ class BankOverviewRecyclerAdapter(
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
         BankOverviewViewHolder(
             ItemBankOverviewBinding.inflate(LayoutInflater.from(parent.context), parent, false),
-            parent.context
+            parent.context,
+            onItemClick
         )
 }

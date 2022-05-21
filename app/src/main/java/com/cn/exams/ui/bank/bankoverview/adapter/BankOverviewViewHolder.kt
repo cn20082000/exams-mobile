@@ -11,10 +11,13 @@ import com.cn.exams.util.enumi.BankScopeEnum
 
 class BankOverviewViewHolder(
     private val binding: ItemBankOverviewBinding,
-    private val context: Context
+    private val context: Context,
+    private val onItemClick: (BankOverviewResponse) -> Unit
 ) : BaseViewHolder<BankOverviewResponse>(binding.root) {
 
     override fun bindData(data: BankOverviewResponse, index: Int) {
+        binding.root.setOnClickListener { onItemClick(data) }
+
         binding.tvName.text = data.name
 
         if (data.scope == BankScopeEnum.PERSONAL) {

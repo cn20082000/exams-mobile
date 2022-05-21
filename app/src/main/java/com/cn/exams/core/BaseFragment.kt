@@ -39,8 +39,12 @@ abstract class BaseFragment<BD : ViewDataBinding, PS : BaseContract.Presenter>
             initUI()
         }
 
-        (requireActivity() as BaseActivity<*, *>).registerBackPressedCallback(this::backPress)
         updateUI()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        (requireActivity() as BaseActivity<*, *>).registerBackPressedCallback(this::backPress)
     }
 
     open fun initUI() {}

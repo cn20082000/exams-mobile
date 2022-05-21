@@ -1,6 +1,7 @@
 package com.cn.exams.data
 
 import com.cn.exams.data.remote.response.BankOverviewResponse
+import com.cn.exams.data.remote.response.BankResponse
 import com.cn.exams.data.remote.response.LoginResponse
 import com.cn.exams.data.remote.response.RegisterResponse
 import com.cn.exams.lib.data.ResponseObject
@@ -24,8 +25,10 @@ interface DataManager {
         description: String,
         scope: BankScopeEnum
     ): ResponseObject<BankOverviewResponse>
+    fun getBank(bankId: Long): ResponseObject<BankResponse>
     fun getMyBank(): ResponseObject<List<BankOverviewResponse>>
     fun getPublicBank(): ResponseObject<List<BankOverviewResponse>>
+    fun updateBank(name: String, description: String, id: Long): ResponseObject<BankOverviewResponse>
 
     companion object {
         private val data by lazy { DataManagerImpl() }

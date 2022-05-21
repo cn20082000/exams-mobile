@@ -11,6 +11,7 @@ import com.cn.exams.lib.data.message
 import com.cn.exams.lib.mess.Mess
 import com.cn.exams.ui.bank.bankoverview.adapter.BankOverviewRecyclerAdapter
 import com.cn.exams.ui.bank.edit.BankEditFragment
+import com.cn.exams.ui.bank.questionlist.QuestionListFragment
 
 class BankOverviewFragment
     : BaseFragment<FragmentBankOverviewBinding, BankOverviewContract.Presenter>(), BankOverviewContract.View {
@@ -38,7 +39,14 @@ class BankOverviewFragment
     }
 
     private fun configRcv() {
-        adapter = BankOverviewRecyclerAdapter(mutableListOf())
+        adapter = BankOverviewRecyclerAdapter(mutableListOf()) {
+            navigation.navigate(
+                R.id.action_fragment_bank_overview_to_fragment_question_list,
+                bundleOf(
+                    QuestionListFragment.ARGUMENT_BANK to it
+                )
+            )
+        }
         binding.rcv.adapter = adapter
     }
 

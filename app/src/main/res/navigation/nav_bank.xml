@@ -8,10 +8,17 @@
     <fragment
         android:id="@+id/fragment_bank_overview"
         android:name="com.cn.exams.ui.bank.bankoverview.BankOverviewFragment"
-        tools:layout="@layout/fragment_bank_overview" >
+        tools:layout="@layout/fragment_bank_overview">
         <action
             android:id="@+id/action_fragment_bank_overview_to_fragment_bank_edit"
             app:destination="@id/fragment_bank_edit"
+            app:enterAnim="@anim/anim_slide_in_left"
+            app:exitAnim="@anim/anim_slide_out_right"
+            app:popEnterAnim="@anim/anim_slide_in_right"
+            app:popExitAnim="@anim/anim_slide_out_left" />
+        <action
+            android:id="@+id/action_fragment_bank_overview_to_fragment_question_list"
+            app:destination="@id/fragment_question_list"
             app:enterAnim="@anim/anim_slide_in_left"
             app:exitAnim="@anim/anim_slide_out_right"
             app:popEnterAnim="@anim/anim_slide_in_right"
@@ -20,5 +27,17 @@
     <fragment
         android:id="@+id/fragment_bank_edit"
         android:name="com.cn.exams.ui.bank.edit.BankEditFragment"
-        tools:layout="@layout/fragment_bank_edit"/>
+        tools:layout="@layout/fragment_bank_edit" />
+    <fragment
+        android:id="@+id/fragment_question_list"
+        android:name="com.cn.exams.ui.bank.questionlist.QuestionListFragment"
+        tools:layout="@layout/fragment_question_list" >
+        <action
+            android:id="@+id/action_fragment_question_list_to_fragment_bank_edit"
+            app:destination="@id/fragment_bank_edit"
+            app:enterAnim="@anim/anim_slide_in_left"
+            app:exitAnim="@anim/anim_slide_out_right"
+            app:popEnterAnim="@anim/anim_slide_in_right"
+            app:popExitAnim="@anim/anim_slide_out_left" />
+    </fragment>
 </navigation>

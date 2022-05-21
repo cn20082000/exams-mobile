@@ -11,6 +11,7 @@
         <item name="colorOnSecondary">@color/primary_text_on_primary</item>
         <!-- Status bar color. -->
         <item name="colorSurface">@color/transparent_100</item>
+        <item name="colorSurfaceVariant">@color/blue_50</item>
         <item name="android:statusBarColor">?attr/colorSurface</item>
         <item name="android:windowLightStatusBar">true</item>
         <!-- Customize your theme here. -->

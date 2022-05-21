@@ -1,6 +1,7 @@
 package com.cn.exams.data
 
 import com.cn.exams.data.remote.response.BankOverviewResponse
+import com.cn.exams.data.remote.response.BankResponse
 import com.cn.exams.data.remote.response.LoginResponse
 import com.cn.exams.data.remote.response.RegisterResponse
 import com.cn.exams.data.repository.AuthenticationRepository
@@ -47,11 +48,23 @@ class DataManagerImpl : DataManager {
         return ResponseObject { bankRepo.createBank(name, description, scope, it) }
     }
 
+    override fun getBank(bankId: Long): ResponseObject<BankResponse> {
+        return ResponseObject { bankRepo.getBank(bankId, it) }
+    }
+
     override fun getMyBank(): ResponseObject<List<BankOverviewResponse>> {
         return ResponseObject { bankRepo.getMyBank(it) }
     }
 
     override fun getPublicBank(): ResponseObject<List<BankOverviewResponse>> {
         return ResponseObject { bankRepo.getPublicBank(it) }
+    }
+
+    override fun updateBank(
+        name: String,
+        description: String,
+        id: Long
+    ): ResponseObject<BankOverviewResponse> {
+        return ResponseObject { bankRepo.updateBank(name, description, id, it) }
     }
 }
