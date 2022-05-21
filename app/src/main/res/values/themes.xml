@@ -10,11 +10,18 @@
         <item name="colorSecondaryVariant">@color/primary_dark</item>
         <item name="colorOnSecondary">@color/primary_text_on_primary</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor" >?attr/colorPrimaryVariant</item>
+        <item name="colorSurface">@color/transparent_100</item>
+        <item name="android:statusBarColor">?attr/colorSurface</item>
+        <item name="android:windowLightStatusBar">true</item>
         <!-- Customize your theme here. -->
+        <item name="android:windowBackground">?attr/colorSurface</item>
     </style>
 
     <style name="Theme.Exams.Splash" parent="Theme.Exams">
         <item name="android:windowBackground">@drawable/bg_splash</item>
+    </style>
+
+    <style name="Theme.Exams.BottomNavigation" parent="Theme.Exams">
+        <item name="colorSecondaryContainer">@color/blue_100</item>
     </style>
 </resources>

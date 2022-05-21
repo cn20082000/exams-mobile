@@ -1,5 +1,6 @@
 package com.cn.exams.data
 
+import com.cn.exams.data.remote.response.BankOverviewResponse
 import com.cn.exams.data.remote.response.LoginResponse
 import com.cn.exams.data.remote.response.RegisterResponse
 import com.cn.exams.lib.data.ResponseObject
@@ -16,6 +17,9 @@ interface DataManager {
         address: String?,
         tel: String
     ): ResponseObject<RegisterResponse>
+
+    fun getMyBank(): ResponseObject<List<BankOverviewResponse>>
+    fun getPublicBank(): ResponseObject<List<BankOverviewResponse>>
 
     companion object {
         private val data by lazy { DataManagerImpl() }

@@ -64,15 +64,6 @@ class RegisterFragment
     override fun requestRegister() {
         binding.swp.isRefreshing = true
         binding.btnRegister.isEnabled = false
-        presenter.register(
-            binding.etName.text.toString(),
-            binding.etBirth.text.toString(),
-            binding.etAddress.text.toString(),
-            binding.etTel.text.toString(),
-            binding.etUsername.text.toString(),
-            binding.etPassword.text.toString(),
-            binding.etCfPassword.text.toString(),
-        )
     }
 
     override fun registerSuccess() {

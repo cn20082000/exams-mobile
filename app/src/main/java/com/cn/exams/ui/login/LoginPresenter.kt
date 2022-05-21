@@ -8,12 +8,12 @@ class LoginPresenter(
     view: LoginContract.View
 ) : BasePresenter<LoginContract.View>(view), LoginContract.Presenter {
 
-    override fun login() {
-        view.requestLogin()
-    }
+    override fun login(username: String?, password: String?) {
+        val usernameC = username ?: ""
+        val passwordC = password ?: ""
 
-    override fun login(username: String, password: String) {
-        dataManager.login(username, password)
+        view.requestLogin()
+        dataManager.login(usernameC, passwordC)
             .onSuccess {
                 App.user = User.from(it)
                 view.loginSuccess()

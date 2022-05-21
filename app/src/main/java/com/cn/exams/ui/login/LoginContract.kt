@@ -13,8 +13,7 @@ interface LoginContract {
     }
 
     interface Presenter : BaseContract.Presenter {
-        fun login()
-        fun login(username: String, password: String)
+        fun login(username: String?, password: String?)
 
         fun register()
     }

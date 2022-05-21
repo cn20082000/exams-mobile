@@ -7,7 +7,7 @@
 
         <variable
             name="presenter"
-            type="com.cn.exams.ui.main.MainContract.Presenter" />
+            type="com.cn.exams.ui.bank.BankContract.Presenter" />
     </data>
 
     <androidx.fragment.app.FragmentContainerView
@@ -16,5 +16,5 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:defaultNavHost="true"
-        app:navGraph="@navigation/nav_graph" />
+        app:navGraph="@navigation/nav_bank" />
 </layout>

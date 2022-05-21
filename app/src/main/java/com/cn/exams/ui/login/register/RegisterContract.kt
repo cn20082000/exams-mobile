@@ -10,15 +10,14 @@ interface RegisterContract {
         fun registerFailed(error: ErrorEnum)
     }
     interface Presenter : BaseContract.Presenter {
-        fun register()
         fun register(
-            name: String,
-            birthStr: String,
-            address: String,
-            tel: String,
-            username: String,
-            password: String,
-            cfPassword: String
+            name: String?,
+            birthStr: String?,
+            address: String?,
+            tel: String?,
+            username: String?,
+            password: String?,
+            cfPassword: String?
         )
     }
 }

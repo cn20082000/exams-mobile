@@ -8,6 +8,34 @@
         <variable
             name="presenter"
             type="com.cn.exams.ui.login.register.RegisterContract.Presenter" />
+
+        <variable
+            name="name"
+            type="String" />
+
+        <variable
+            name="birth"
+            type="String" />
+
+        <variable
+            name="address"
+            type="String" />
+
+        <variable
+            name="tel"
+            type="String" />
+
+        <variable
+            name="username"
+            type="String" />
+
+        <variable
+            name="password"
+            type="String" />
+
+        <variable
+            name="cfPassword"
+            type="String" />
     </data>
 
     <LinearLayout
@@ -56,7 +84,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:imeOptions="actionNext"
-                            android:inputType="textCapWords|textPersonName" />
+                            android:inputType="textCapWords|textPersonName"
+                            android:text="@={name}" />
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.textfield.TextInputLayout
@@ -74,7 +103,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:imeOptions="actionNext"
-                            android:inputType="date" />
+                            android:inputType="date"
+                            android:text="@={birth}" />
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.textfield.TextInputLayout
@@ -90,7 +120,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:imeOptions="actionNext"
-                            android:inputType="textCapWords" />
+                            android:inputType="textCapWords"
+                            android:text="@={address}" />
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.textfield.TextInputLayout
@@ -106,7 +137,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:imeOptions="actionNext"
-                            android:inputType="phone" />
+                            android:inputType="phone"
+                            android:text="@={tel}" />
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.textfield.TextInputLayout
@@ -121,7 +153,8 @@
                             android:id="@+id/et_username"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:imeOptions="actionNext" />
+                            android:imeOptions="actionNext"
+                            android:text="@={username}" />
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.textfield.TextInputLayout
@@ -137,7 +170,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:imeOptions="actionNext"
-                            android:inputType="textPassword" />
+                            android:inputType="textPassword"
+                            android:text="@={password}" />
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.textfield.TextInputLayout
@@ -153,7 +187,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:imeOptions="actionNext"
-                            android:inputType="textPassword" />
+                            android:inputType="textPassword"
+                            android:text="@={cfPassword}" />
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.checkbox.MaterialCheckBox
@@ -167,7 +202,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginVertical="@dimen/between_element_quadruple"
-                        android:onClick="@{() -> presenter.register()}"
+                        android:onClick="@{() -> presenter.register(name, birth, address, tel, username, password, cfPassword)}"
                         android:text="@string/register" />
                 </LinearLayout>
             </ScrollView>

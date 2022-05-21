@@ -8,6 +8,14 @@
         <variable
             name="presenter"
             type="com.cn.exams.ui.login.LoginContract.Presenter" />
+
+        <variable
+            name="username"
+            type="String" />
+
+        <variable
+            name="password"
+            type="String" />
     </data>
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
@@ -47,7 +55,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:imeOptions="actionNext"
-                        android:singleLine="true" />
+                        android:singleLine="true"
+                        android:text="@={username}" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -63,7 +72,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:imeOptions="actionDone"
-                        android:inputType="textPassword" />
+                        android:inputType="textPassword"
+                        android:text="@={password}" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <Button
@@ -71,7 +81,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/between_element_quadruple"
-                    android:onClick="@{() -> presenter.login()}"
+                    android:onClick="@{() -> presenter.login(username, password)}"
                     android:text="@string/login" />
 
                 <Button

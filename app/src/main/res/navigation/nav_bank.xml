@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_bank"
+    app:startDestination="@id/fragment_bank_overview">
+
+    <fragment
+        android:id="@+id/fragment_bank_overview"
+        android:name="com.cn.exams.ui.bank.bankoverview.BankOverviewFragment"
+        tools:layout="@layout/fragment_bank_overview" />
+</navigation>

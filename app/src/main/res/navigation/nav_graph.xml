@@ -16,9 +16,20 @@
             app:exitAnim="@anim/anim_slide_out_right"
             app:popEnterAnim="@anim/anim_slide_in_right"
             app:popExitAnim="@anim/anim_slide_out_left" />
+        <action
+            android:id="@+id/action_fragment_login_to_fragment_home"
+            app:destination="@id/fragment_home"
+            app:enterAnim="@anim/anim_slide_in_left"
+            app:exitAnim="@anim/anim_slide_out_right"
+            app:popEnterAnim="@anim/anim_slide_in_right"
+            app:popExitAnim="@anim/anim_slide_out_left" />
     </fragment>
     <fragment
         android:id="@+id/fragment_register"
         android:name="com.cn.exams.ui.login.register.RegisterFragment"
-        tools:layout="@layout/fragment_register"/>
+        tools:layout="@layout/fragment_register" />
+    <fragment
+        android:id="@+id/fragment_home"
+        android:name="com.cn.exams.ui.home.HomeFragment"
+        tools:layout="@layout/fragment_home" />
 </navigation>

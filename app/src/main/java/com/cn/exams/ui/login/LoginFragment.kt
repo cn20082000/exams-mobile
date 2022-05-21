@@ -40,13 +40,13 @@ class LoginFragment
     override fun requestLogin() {
         binding.swp.isRefreshing = true
         binding.btnLogin.isEnabled = false
-        presenter.login(binding.etUsername.text.toString(), binding.etPassword.text.toString())
     }
 
     override fun loginSuccess() {
         binding.swp.isRefreshing = false
         binding.btnLogin.isEnabled = true
         Mess.success(requireActivity(), getString(R.string.login_success))
+        navigation.navigate(R.id.action_fragment_login_to_fragment_home)
     }
 
     override fun loginFailed(error: ErrorEnum) {
