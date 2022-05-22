@@ -48,4 +48,14 @@
     <string name="add_new_success">Thêm mới thành công</string>
     <string name="missing_bank_name">Tên ngân hàng không được để trống</string>
     <string name="invalid_bank_name_length">Tên ngân hàng phải có độ dài lớn hơn hoặc bằng 5 kí tự</string>
+    <string name="new_question">Thêm câu hỏi mới</string>
+    <string name="question_content">Nội dung câu hỏi</string>
+    <string name="explanation">Giải thích câu trả lời</string>
+    <string name="answer_content">Nội dung câu trả lời</string>
+    <string name="question_quantity">Số lượng câu trả lời</string>
+    <string name="generate">Tạo</string>
+    <string name="add_answer">Thêm câu trả lời</string>
+    <string name="answer_list">Danh sách câu trả lời:</string>
+    <string name="update_success">Cập nhật thành công</string>
+    <string name="update_question">Cập nhật câu hỏi</string>
 </resources>

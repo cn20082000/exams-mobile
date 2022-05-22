@@ -39,4 +39,8 @@ class QuestionListPresenter(
     override fun editBank() {
         view.requestEditBank()
     }
+
+    override fun addQuestion() {
+        view.requestAddQuestion()
+    }
 }

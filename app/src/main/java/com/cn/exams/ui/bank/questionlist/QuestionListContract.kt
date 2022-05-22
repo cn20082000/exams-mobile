@@ -15,6 +15,8 @@ interface QuestionListContract {
         fun searchQuestionFailed(error: ErrorEnum)
 
         fun requestEditBank()
+
+        fun requestAddQuestion()
     }
     interface Presenter : BaseContract.Presenter {
         fun infoToggle()
@@ -23,5 +25,7 @@ interface QuestionListContract {
         fun searchQuestion(keyword: String?)
 
         fun editBank()
+
+        fun addQuestion()
     }
 }

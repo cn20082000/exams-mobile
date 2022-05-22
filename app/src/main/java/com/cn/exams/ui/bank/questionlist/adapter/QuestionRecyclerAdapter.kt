@@ -7,7 +7,8 @@ import com.cn.exams.data.remote.response.QuestionResponse
 import com.cn.exams.databinding.ItemQuestionBinding
 
 class QuestionRecyclerAdapter(
-    items: MutableList<QuestionResponse>
+    items: MutableList<QuestionResponse>,
+    private val onItemClick: (QuestionResponse) -> Unit
 ) : BaseRecyclerAdapter<QuestionResponse, QuestionViewHolder>(items) {
 
     override fun areContentsTheSame(oldItem: QuestionResponse, newItem: QuestionResponse) =
@@ -18,6 +19,7 @@ class QuestionRecyclerAdapter(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = QuestionViewHolder(
         ItemQuestionBinding.inflate(LayoutInflater.from(parent.context), parent, false),
-        parent.context
+        parent.context,
+        onItemClick
     )
 }

@@ -67,7 +67,65 @@ class DataManagerImpl : DataManager {
         return ResponseObject { bankRepo.updateBank(name, description, id, it) }
     }
 
+    override fun createQuestion(
+        bankId: Long,
+        content: String,
+        explanation: String,
+        correctAnswer: Int,
+        answer1: String,
+        answer2: String,
+        answer3: String,
+        answer4: String
+    ): ResponseObject<QuestionResponse> {
+        return ResponseObject {
+            questionRepo.createQuestion(
+                bankId,
+                content,
+                explanation,
+                correctAnswer,
+                answer1,
+                answer2,
+                answer3,
+                answer4,
+                it
+            )
+        }
+    }
+
     override fun getQuestionByBank(bankId: Long): ResponseObject<List<QuestionResponse>> {
         return ResponseObject { questionRepo.getQuestionByBank(bankId, it) }
+    }
+
+    override fun updateQuestion(
+        id: Long,
+        content: String,
+        explanation: String,
+        correctAnswer: Int,
+        answerId1: Long,
+        answer1: String,
+        answerId2: Long,
+        answer2: String,
+        answerId3: Long,
+        answer3: String,
+        answerId4: Long,
+        answer4: String
+    ): ResponseObject<QuestionResponse> {
+        return ResponseObject {
+            questionRepo.updateQuestion(
+                id,
+                content,
+                explanation,
+                correctAnswer,
+                answerId1,
+                answer1,
+                answerId2,
+                answer2,
+                answerId3,
+                answer3,
+                answerId4,
+                answer4,
+                it
+            )
+        }
     }
 }

@@ -9,7 +9,8 @@ import com.cn.exams.databinding.ItemQuestionBinding
 
 class QuestionViewHolder(
     private val binding: ItemQuestionBinding,
-    private val context: Context
+    private val context: Context,
+    private val onItemClick: (QuestionResponse) -> Unit
 ) : BaseViewHolder<QuestionResponse>(binding.root) {
 
     override fun bindData(data: QuestionResponse, index: Int) {
@@ -18,5 +19,8 @@ class QuestionViewHolder(
             R.string.updated_at_question,
             Constant.dateFormat.format(data.updatedAt)
         )
+        binding.root.setOnClickListener {
+            onItemClick(data)
+        }
     }
 }

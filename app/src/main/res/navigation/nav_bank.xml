@@ -39,5 +39,16 @@
             app:exitAnim="@anim/anim_slide_out_right"
             app:popEnterAnim="@anim/anim_slide_in_right"
             app:popExitAnim="@anim/anim_slide_out_left" />
+        <action
+            android:id="@+id/action_fragment_question_list_to_fragment_question_edit"
+            app:destination="@id/fragment_question_edit"
+            app:enterAnim="@anim/anim_slide_in_left"
+            app:exitAnim="@anim/anim_slide_out_right"
+            app:popEnterAnim="@anim/anim_slide_in_right"
+            app:popExitAnim="@anim/anim_slide_out_left" />
     </fragment>
+    <fragment
+        android:id="@+id/fragment_question_edit"
+        android:name="com.cn.exams.ui.bank.questionedit.QuestionEditFragment"
+        tools:layout="@layout/fragment_question_edit" />
 </navigation>

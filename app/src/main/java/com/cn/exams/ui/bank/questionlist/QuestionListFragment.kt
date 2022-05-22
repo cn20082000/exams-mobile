@@ -16,6 +16,7 @@ import com.cn.exams.lib.data.message
 import com.cn.exams.lib.mess.Mess
 import com.cn.exams.lib.task.TaskModule
 import com.cn.exams.ui.bank.edit.BankEditFragment
+import com.cn.exams.ui.bank.questionedit.QuestionEditFragment
 import com.cn.exams.ui.bank.questionlist.adapter.QuestionRecyclerAdapter
 
 class QuestionListFragment
@@ -60,7 +61,15 @@ class QuestionListFragment
     }
 
     private fun configRcv() {
-        adapter = QuestionRecyclerAdapter(mutableListOf())
+        adapter = QuestionRecyclerAdapter(mutableListOf()) {
+            navigation.navigate(
+                R.id.action_fragment_question_list_to_fragment_question_edit,
+                bundleOf(
+                    QuestionEditFragment.ARGUMENT_MODE to if (newestBank?.owner?.id == App.user?.id) QuestionEditFragment.MODE_EDIT else QuestionEditFragment.MODE_VIEW,
+                    QuestionEditFragment.ARGUMENT_QUESTION to it
+                )
+            )
+        }
         binding.rcv.adapter = adapter
     }
 
@@ -121,6 +130,16 @@ class QuestionListFragment
                 )
             )
         }
+    }
+
+    override fun requestAddQuestion() {
+        navigation.navigate(
+            R.id.action_fragment_question_list_to_fragment_question_edit,
+            bundleOf(
+                QuestionEditFragment.ARGUMENT_MODE to QuestionEditFragment.MODE_ADD,
+                QuestionEditFragment.ARGUMENT_BANK_ID to oldBank.id
+            )
+        )
     }
 
     companion object {

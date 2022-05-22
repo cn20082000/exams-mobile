@@ -16,7 +16,7 @@ abstract class BaseRecyclerAdapter<T, VH : BaseViewHolder<T>>(
 
     abstract fun areItemsTheSame(oldItem: T, newItem: T): Boolean
 
-    fun updateData(newItems: MutableList<T>) {
+    open fun updateData(newItems: MutableList<T>) {
         val diffCallback = DiffCallback(items, newItems)
         val diffResult = DiffUtil.calculateDiff(diffCallback)
 

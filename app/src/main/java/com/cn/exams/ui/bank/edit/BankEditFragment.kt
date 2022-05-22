@@ -72,7 +72,10 @@ class BankEditFragment
     override fun actionSuccess() {
         binding.swp.isRefreshing = false
         binding.btnAction.isEnabled = true
-        Mess.success(requireActivity(), getString(R.string.add_new_success))
+        Mess.success(requireActivity(), getString(
+            if (mode == MODE_ADD) R.string.add_new_success
+            else R.string.update_success
+        ))
         activity?.onBackPressed()
     }
 
