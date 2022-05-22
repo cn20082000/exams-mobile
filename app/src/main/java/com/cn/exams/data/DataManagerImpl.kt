@@ -1,11 +1,9 @@
 package com.cn.exams.data
 
-import com.cn.exams.data.remote.response.BankOverviewResponse
-import com.cn.exams.data.remote.response.BankResponse
-import com.cn.exams.data.remote.response.LoginResponse
-import com.cn.exams.data.remote.response.RegisterResponse
+import com.cn.exams.data.remote.response.*
 import com.cn.exams.data.repository.AuthenticationRepository
 import com.cn.exams.data.repository.BankRepository
+import com.cn.exams.data.repository.QuestionRepository
 import com.cn.exams.lib.data.ResponseObject
 import com.cn.exams.util.enumi.BankScopeEnum
 import java.util.*
@@ -14,6 +12,7 @@ class DataManagerImpl : DataManager {
 
     private val authRepo = AuthenticationRepository.getInstance()
     private val bankRepo = BankRepository.getInstance()
+    private val questionRepo = QuestionRepository.getInstance()
 
     override fun login(username: String, password: String): ResponseObject<LoginResponse> {
         return ResponseObject { authRepo.login(username, password, it) }
@@ -66,5 +65,9 @@ class DataManagerImpl : DataManager {
         id: Long
     ): ResponseObject<BankOverviewResponse> {
         return ResponseObject { bankRepo.updateBank(name, description, id, it) }
+    }
+
+    override fun getQuestionByBank(bankId: Long): ResponseObject<List<QuestionResponse>> {
+        return ResponseObject { questionRepo.getQuestionByBank(bankId, it) }
     }
 }

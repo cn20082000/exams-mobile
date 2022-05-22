@@ -46,7 +46,8 @@
                         android:background="@drawable/bg_search_bar"
                         android:hint="@string/search"
                         android:imeOptions="actionSearch"
-                        android:minHeight="@dimen/min_clickable_height" />
+                        android:minHeight="@dimen/min_clickable_height"
+                        android:onTextChanged="@{(s, i1, i2, i3) -> presenter.searchQuestion(s.toString())}" />
                 </com.google.android.material.textfield.TextInputLayout>
             </com.google.android.material.appbar.MaterialToolbar>
         </com.google.android.material.appbar.AppBarLayout>

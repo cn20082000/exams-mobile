@@ -3,7 +3,8 @@ package com.cn.exams.ui.bank.questionlist
 import com.cn.exams.core.BasePresenter
 
 class QuestionListPresenter(
-    view: QuestionListContract.View
+    view: QuestionListContract.View,
+    private val bankId: Long
 ) : BasePresenter<QuestionListContract.View>(view), QuestionListContract.Presenter {
 
     private var infoExpanded = false
@@ -13,10 +14,25 @@ class QuestionListPresenter(
         view.requestInfoToggle(infoExpanded)
     }
 
-    override fun getBankInfo(bankId: Long) {
+    override fun getBankInfo() {
         dataManager.getBank(bankId)
             .onSuccess { view.getBankInfoSuccess(it) }
             .onFailure { view.getBankInfoFailed(it.error) }
+            .call()
+    }
+
+    override fun searchQuestion(keyword: String?) {
+        dataManager.getQuestionByBank(bankId)
+            .onSuccess {
+                if (keyword.isNullOrBlank()) {
+                    view.searchQuestionSuccess(it)
+                } else {
+                    view.searchQuestionSuccess(it.filter { q ->
+                        q.content.lowercase().contains(keyword.lowercase().trim())
+                    })
+                }
+            }
+            .onFailure { view.searchQuestionFailed(it.error) }
             .call()
     }
 

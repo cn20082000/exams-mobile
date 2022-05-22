@@ -33,6 +33,7 @@
     <string name="_public">Công khai</string>
     <string name="personal">Cá nhân</string>
     <string name="updated_at_bank">Cập nhật lần cuối ngày %1$s bởi %2$s</string>
+    <string name="updated_at_question">Cập nhật lần cuối ngày %1$s</string>
     <string name="sample_content_description">Sample content description</string>
     <string name="sample_text">Duis non risus varius, vestibulum magna at, tempor eros. Curabitur.</string>
     <string name="new_bank">Thêm ngân hàng mới</string>

@@ -9,12 +9,14 @@ import com.cn.exams.common.Constant
 import com.cn.exams.core.BaseFragment
 import com.cn.exams.data.remote.response.BankOverviewResponse
 import com.cn.exams.data.remote.response.BankResponse
+import com.cn.exams.data.remote.response.QuestionResponse
 import com.cn.exams.databinding.FragmentQuestionListBinding
 import com.cn.exams.lib.data.ErrorEnum
 import com.cn.exams.lib.data.message
 import com.cn.exams.lib.mess.Mess
 import com.cn.exams.lib.task.TaskModule
 import com.cn.exams.ui.bank.edit.BankEditFragment
+import com.cn.exams.ui.bank.questionlist.adapter.QuestionRecyclerAdapter
 
 class QuestionListFragment
     : BaseFragment<FragmentQuestionListBinding, QuestionListContract.Presenter>(),
@@ -23,25 +25,28 @@ class QuestionListFragment
     override val setupBinding: (LayoutInflater) -> FragmentQuestionListBinding
         get() = FragmentQuestionListBinding::inflate
     override val setupPresenter: () -> QuestionListContract.Presenter
-        get() = { QuestionListPresenter(this) }
+        get() = { QuestionListPresenter(this, oldBank.id) }
     override val setupViewModel: (QuestionListContract.Presenter) -> Unit
         get() = binding::setPresenter
 
     private val oldBank by lazy { arguments?.getParcelable<BankOverviewResponse>(ARGUMENT_BANK)!! }
     private var task: TaskModule? = null
     private var newestBank: BankResponse? = null
+    private var adapter: QuestionRecyclerAdapter? = null
 
     override fun initUI() {
         configToolbar()
         configSwp()
+        configRcv()
     }
 
     override fun updateUI() {
         binding.swp.isRefreshing = true
-        task = TaskModule(mutableListOf(TASK_INFO)) {
+        task = TaskModule(mutableListOf(TASK_INFO, TASK_SEARCH)) {
             binding.swp.isRefreshing = false
         }
-        presenter.getBankInfo(oldBank.id)
+        presenter.getBankInfo()
+        presenter.searchQuestion(binding.etSearch.text.toString())
     }
 
     private fun configToolbar() {
@@ -52,6 +57,11 @@ class QuestionListFragment
 
     private fun configSwp() {
         binding.swp.setOnRefreshListener { updateUI() }
+    }
+
+    private fun configRcv() {
+        adapter = QuestionRecyclerAdapter(mutableListOf())
+        binding.rcv.adapter = adapter
     }
 
     override fun requestInfoToggle(isChecked: Boolean) {
@@ -91,6 +101,16 @@ class QuestionListFragment
         Mess.error(requireActivity(), error.message(resources))
     }
 
+    override fun searchQuestionSuccess(list: List<QuestionResponse>) {
+        task?.markAsSuccess(TASK_SEARCH)
+        adapter?.updateData(list.toMutableList())
+    }
+
+    override fun searchQuestionFailed(error: ErrorEnum) {
+        task?.markAsSuccess(TASK_SEARCH)
+        Mess.error(requireActivity(), error.message(resources))
+    }
+
     override fun requestEditBank() {
         newestBank?.let {
             navigation.navigate(
@@ -107,5 +127,6 @@ class QuestionListFragment
         const val ARGUMENT_BANK = "arg_bank"
 
         const val TASK_INFO = 1
+        const val TASK_SEARCH = 2
     }
 }
