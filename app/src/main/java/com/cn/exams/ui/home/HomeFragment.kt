@@ -43,4 +43,10 @@ class HomeFragment
             true
         }
     }
+
+    fun toLogin() {
+        navigation.navigate(
+            R.id.action_fragment_home_to_fragment_login
+        )
+    }
 }

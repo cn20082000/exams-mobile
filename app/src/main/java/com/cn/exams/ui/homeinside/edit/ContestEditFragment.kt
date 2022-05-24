@@ -1,12 +1,16 @@
-package com.cn.exams.ui.contest.edit
+package com.cn.exams.ui.homeinside.edit
 
 import android.app.DatePickerDialog
+import android.content.ClipData
+import android.content.ClipboardManager
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import com.cn.exams.R
 import com.cn.exams.common.Constant
 import com.cn.exams.core.BaseFragment
 import com.cn.exams.data.remote.response.BankResponse
+import com.cn.exams.data.remote.response.ContestResponse
 import com.cn.exams.databinding.FragmentContestEditBinding
 import com.cn.exams.lib.data.ErrorEnum
 import com.cn.exams.lib.data.message
@@ -14,7 +18,6 @@ import com.cn.exams.lib.mess.Mess
 import com.cn.exams.util.toCalendar
 import java.text.ParseException
 import java.util.*
-import kotlin.math.min
 
 class ContestEditFragment
     :BaseFragment<FragmentContestEditBinding, ContestEditContract.Presenter>(), ContestEditContract.View {
@@ -141,10 +144,13 @@ class ContestEditFragment
         binding.btnAction.isEnabled = false
     }
 
-    override fun actionSuccess() {
+    override fun actionSuccess(contest: ContestResponse) {
         binding.swp.isRefreshing = false
         binding.btnAction.isEnabled = true
-        Mess.success(requireActivity(), getString(R.string.add_contest_success))
+        val clipboard = requireActivity().getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+        val data = ClipData.newPlainText("text", contest.code)
+        clipboard.setPrimaryClip(data)
+        Mess.success(requireActivity(), getString(R.string.add_contest_success), true)
         activity?.onBackPressed()
     }
 

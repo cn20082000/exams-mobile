@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.ViewDataBinding
-import com.cn.exams.util.isNotNull
 
 abstract class BaseActivity<BD: ViewDataBinding, PS: BaseContract.Presenter>
     : AppCompatActivity() {
@@ -36,6 +35,7 @@ abstract class BaseActivity<BD: ViewDataBinding, PS: BaseContract.Presenter>
 
     override fun onBackPressed() {
         backPressedCallback?.let { it() }
+            ?: realBackPressed()
     }
 
     fun realBackPressed() {

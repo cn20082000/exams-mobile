@@ -31,7 +31,7 @@
     <fragment
         android:id="@+id/fragment_question_list"
         android:name="com.cn.exams.ui.bank.questionlist.QuestionListFragment"
-        tools:layout="@layout/fragment_question_list" >
+        tools:layout="@layout/fragment_question_list">
         <action
             android:id="@+id/action_fragment_question_list_to_fragment_bank_edit"
             app:destination="@id/fragment_bank_edit"
@@ -60,6 +60,6 @@
         tools:layout="@layout/fragment_question_edit" />
     <fragment
         android:id="@+id/fragment_contest_edit"
-        android:name="com.cn.exams.ui.contest.edit.ContestEditFragment"
-        tools:layout="@layout/fragment_contest_edit"/>
+        android:name="com.cn.exams.ui.homeinside.edit.ContestEditFragment"
+        tools:layout="@layout/fragment_contest_edit" />
 </navigation>

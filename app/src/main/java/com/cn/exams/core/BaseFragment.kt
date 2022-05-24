@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.activity.addCallback
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
@@ -53,7 +52,8 @@ abstract class BaseFragment<BD : ViewDataBinding, PS : BaseContract.Presenter>
 
     private fun backPress() {
         if (navigation.popBackStack()) return
-        if (parentFragment?.parentFragment.isNotNull()) {
+        if (parentFragment?.parentFragment.isNotNull()
+            && parentFragment?.parentFragment is BaseFragment<*,*>) {
             (parentFragment?.parentFragment as BaseFragment<*,*>).backPress()
             return
         }

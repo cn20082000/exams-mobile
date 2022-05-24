@@ -10,7 +10,6 @@ import com.cn.exams.lib.data.ErrorEnum
 import com.cn.exams.lib.data.message
 import com.cn.exams.lib.mess.Mess
 import com.cn.exams.ui.bank.questionedit.adapter.AnswerEditRecyclerAdapter
-import com.cn.exams.util.isNotNull
 
 class QuestionEditFragment
     : BaseFragment<FragmentQuestionEditBinding, QuestionEditContract.Presenter>(),

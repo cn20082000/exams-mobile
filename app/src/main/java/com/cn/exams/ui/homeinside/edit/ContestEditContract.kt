@@ -1,7 +1,8 @@
-package com.cn.exams.ui.contest.edit
+package com.cn.exams.ui.homeinside.edit
 
 import com.cn.exams.core.BaseContract
 import com.cn.exams.data.remote.response.BankResponse
+import com.cn.exams.data.remote.response.ContestResponse
 import com.cn.exams.lib.data.ErrorEnum
 
 interface ContestEditContract {
@@ -13,7 +14,7 @@ interface ContestEditContract {
         fun requestPersonalChange(isPublic: Boolean)
 
         fun requestAction()
-        fun actionSuccess()
+        fun actionSuccess(contest: ContestResponse)
         fun actionFailed(error: ErrorEnum)
     }
 

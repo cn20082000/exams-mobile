@@ -18,7 +18,7 @@ import com.cn.exams.lib.task.TaskModule
 import com.cn.exams.ui.bank.edit.BankEditFragment
 import com.cn.exams.ui.bank.questionedit.QuestionEditFragment
 import com.cn.exams.ui.bank.questionlist.adapter.QuestionRecyclerAdapter
-import com.cn.exams.ui.contest.edit.ContestEditFragment
+import com.cn.exams.ui.homeinside.edit.ContestEditFragment
 
 class QuestionListFragment
     : BaseFragment<FragmentQuestionListBinding, QuestionListContract.Presenter>(),

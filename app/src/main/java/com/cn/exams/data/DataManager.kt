@@ -63,6 +63,8 @@ interface DataManager {
         scope: ContestScopeEnum,
         bankId: Long,
     ): ResponseObject<ContestResponse>
+    fun joinContest(code: String, password: String): ResponseObject<Contest4JoinResponse>
+    fun submitContest(answers: List<Int>): ResponseObject<ReportResponse>
 
     companion object {
         private val data by lazy { DataManagerImpl() }

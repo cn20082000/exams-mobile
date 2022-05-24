@@ -1,4 +1,4 @@
-package com.cn.exams.ui.contest.edit
+package com.cn.exams.ui.homeinside.edit
 
 import com.cn.exams.common.Constant
 import com.cn.exams.core.BasePresenter
@@ -76,7 +76,7 @@ class ContestEditPresenter(
                 endAtTime,
                 if (isPublicC) ContestScopeEnum.PUBLIC else ContestScopeEnum.PRIVATE,
                 bankId
-            ).onSuccess { view.actionSuccess() }
+            ).onSuccess { view.actionSuccess(it) }
                 .onFailure { view.actionFailed(it.error) }
                 .call()
         }

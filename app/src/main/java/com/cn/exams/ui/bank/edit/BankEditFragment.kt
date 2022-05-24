@@ -3,7 +3,6 @@ package com.cn.exams.ui.bank.edit
 import android.view.LayoutInflater
 import com.cn.exams.R
 import com.cn.exams.core.BaseFragment
-import com.cn.exams.data.remote.response.BankOverviewResponse
 import com.cn.exams.data.remote.response.BankResponse
 import com.cn.exams.databinding.FragmentBankEditBinding
 import com.cn.exams.lib.data.ErrorEnum

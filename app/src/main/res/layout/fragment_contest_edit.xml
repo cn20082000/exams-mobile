@@ -7,7 +7,7 @@
 
         <variable
             name="presenter"
-            type="com.cn.exams.ui.contest.edit.ContestEditContract.Presenter" />
+            type="com.cn.exams.ui.homeinside.edit.ContestEditContract.Presenter" />
 
         <variable
             name="name"

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="@dimen/between_element_double"
+    android:layout_marginVertical="@dimen/between_element_half"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_question"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/sample_text"
+        android:textColor="@color/primary_text_on_white"
+        android:textSize="@dimen/font_size_big" />
+
+    <com.google.android.material.radiobutton.MaterialRadioButton
+        android:id="@+id/rb_answer_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/between_element"
+        android:text="@string/sample_text"
+        android:textColor="@color/primary_text_on_white"
+        android:textSize="@dimen/font_size_medium" />
+
+    <com.google.android.material.radiobutton.MaterialRadioButton
+        android:id="@+id/rb_answer_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/sample_text"
+        android:textColor="@color/primary_text_on_white"
+        android:textSize="@dimen/font_size_medium" />
+
+    <com.google.android.material.radiobutton.MaterialRadioButton
+        android:id="@+id/rb_answer_3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/sample_text"
+        android:textColor="@color/primary_text_on_white"
+        android:textSize="@dimen/font_size_medium" />
+
+    <com.google.android.material.radiobutton.MaterialRadioButton
+        android:id="@+id/rb_answer_4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/sample_text"
+        android:textColor="@color/primary_text_on_white"
+        android:textSize="@dimen/font_size_medium" />
+</RadioGroup>

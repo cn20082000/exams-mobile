@@ -67,7 +67,7 @@ class QuestionEditPresenter(
                     getAnsId(3),
                     answer4C,
                 ).onSuccess { view.actionSuccess() }
-                    .onFailure { view.actionFailed(it.error) }
+                    .onFailure { er -> view.actionFailed(er.error) }
                     .call()
             }
         }

@@ -154,4 +154,12 @@ class DataManagerImpl : DataManager {
             )
         }
     }
+
+    override fun joinContest(code: String, password: String): ResponseObject<Contest4JoinResponse> {
+        return ResponseObject { contestRepo.joinContest(code, password, it) }
+    }
+
+    override fun submitContest(answers: List<Int>): ResponseObject<ReportResponse> {
+        return ResponseObject { contestRepo.submitContest(answers, it) }
+    }
 }

@@ -1,4 +1,4 @@
-package com.cn.exams.ui.home.homeinside
+package com.cn.exams.ui.homeinside
 
 import android.view.LayoutInflater
 import com.cn.exams.core.BaseFragment

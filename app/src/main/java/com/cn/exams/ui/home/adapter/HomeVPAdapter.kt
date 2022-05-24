@@ -3,8 +3,8 @@ package com.cn.exams.ui.home.adapter
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.cn.exams.ui.bank.BankFragment
-import com.cn.exams.ui.home.homeinside.HomeInsideFragment
-import com.cn.exams.ui.home.other.OtherFragment
+import com.cn.exams.ui.homeinside.HomeInsideFragment
+import com.cn.exams.ui.other.OtherFragment
 
 class HomeVPAdapter(
     fragment: Fragment

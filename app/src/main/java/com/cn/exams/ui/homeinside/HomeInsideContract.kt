@@ -1,8 +1,8 @@
-package com.cn.exams.ui.home.other
+package com.cn.exams.ui.homeinside
 
 import com.cn.exams.core.BaseContract
 
-interface OtherContract {
+interface HomeInsideContract {
     interface View : BaseContract.View
     interface Presenter : BaseContract.Presenter
 }

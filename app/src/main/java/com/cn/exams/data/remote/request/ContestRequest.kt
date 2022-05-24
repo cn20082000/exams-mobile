@@ -11,5 +11,6 @@ data class ContestRequest(
     val scope: ContestScopeEnum? = null,
     val startAt: Date? = null,
     val endAt: Date? = null,
-    val bank: BankRequest? = null
+    val bank: BankRequest? = null,
+    val code: String? = null
 )

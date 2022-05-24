@@ -7,21 +7,37 @@
 
         <variable
             name="presenter"
-            type="com.cn.exams.ui.home.other.OtherContract.Presenter" />
+            type="com.cn.exams.ui.other.OtherContract.Presenter" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:padding="@dimen/between_element_double">
 
-        <TextView
-            android:layout_width="wrap_content"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_image"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:elevation="0dp"
+
+            app:cardCornerRadius="@dimen/between_element_double"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/img_bg" />
+        </androidx.cardview.widget.CardView>
+
+        <Button
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Other fragment"
+            android:layout_marginBottom="@dimen/between_element_quadruple"
+            android:onClick="@{() -> presenter.logout()}"
+            android:text="@string/logout"
 
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintBottom_toBottomOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

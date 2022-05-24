@@ -69,5 +69,15 @@
     <string name="invalid_start_format">Định dạng ngày bắt đầu chưa đúng</string>
     <string name="invalid_end_format">Định dạng ngày kết thúc chưa đúng</string>
     <string name="invalid_end_before_start">Ngày bắt đầu không được lớn hơn ngày kết thúc</string>
-    <string name="add_contest_success">Tạo bài kiểm tra thành công</string>
+    <string name="add_contest_success">Mã tham gia của bài kiểm tra đã được sao chép vào bộ nhớ tạm.</string>
+    <string name="logout">Đăng xuất</string>
+    <string name="test_now">Làm bài ngay</string>
+    <string name="prepare_test">Chuẩn bị làm bài</string>
+    <string name="code">Mã bài kiểm tra</string>
+    <string name="submit">Nộp bài</string>
+    <string name="question_template">Câu hỏi số %1$d: %2$s</string>
+    <string name="report">Kết quả</string>
+    <string name="re_test">Làm bài kiểm tra khác</string>
+    <string name="score_template">Điểm số: %1$d/%2$d</string>
+    <string name="test_time_template">Thời gian làm bài: %1$d giờ %2$d phút %3$d giây.</string>
 </resources>

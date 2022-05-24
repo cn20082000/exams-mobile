@@ -2,7 +2,6 @@ package com.cn.exams.ui.bank.bankoverview
 
 import com.cn.exams.core.BasePresenter
 import com.cn.exams.data.remote.response.BankOverviewResponse
-import java.util.*
 
 class BankOverviewPresenter(
     view: BankOverviewContract.View

@@ -1,8 +1,5 @@
 package com.cn.exams.ui.bank.questionedit.adapter
 
-import android.util.Log
-import androidx.core.widget.doAfterTextChanged
-import androidx.core.widget.doOnTextChanged
 import com.cn.exams.core.BaseViewHolder
 import com.cn.exams.databinding.ItemAnswerEditBinding
 
@@ -15,7 +12,7 @@ class AnswerEditViewHolder(
 
     override fun bindData(data: String, index: Int) {
 //        if (data != binding.etContent.text.toString()) {
-            binding.etContent.setText(data)
+        binding.etContent.setText(data)
 //        }
 //        binding.etContent.doAfterTextChanged { text ->
 //            onContentEdit(text.toString(), index)
