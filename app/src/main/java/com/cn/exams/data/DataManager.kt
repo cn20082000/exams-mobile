@@ -3,6 +3,7 @@ package com.cn.exams.data
 import com.cn.exams.data.remote.response.*
 import com.cn.exams.lib.data.ResponseObject
 import com.cn.exams.util.enumi.BankScopeEnum
+import com.cn.exams.util.enumi.ContestScopeEnum
 import java.util.*
 
 interface DataManager {
@@ -52,6 +53,16 @@ interface DataManager {
         answerId4: Long,
         answer4: String,
     ): ResponseObject<QuestionResponse>
+
+    fun createContest(
+        name: String,
+        password: String,
+        quantity: Int,
+        startAt: Date,
+        endAt: Date?,
+        scope: ContestScopeEnum,
+        bankId: Long,
+    ): ResponseObject<ContestResponse>
 
     companion object {
         private val data by lazy { DataManagerImpl() }

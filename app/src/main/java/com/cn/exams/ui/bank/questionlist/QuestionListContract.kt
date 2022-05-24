@@ -17,6 +17,8 @@ interface QuestionListContract {
         fun requestEditBank()
 
         fun requestAddQuestion()
+
+        fun requestAddContest()
     }
     interface Presenter : BaseContract.Presenter {
         fun infoToggle()
@@ -27,5 +29,7 @@ interface QuestionListContract {
         fun editBank()
 
         fun addQuestion()
+
+        fun addContest()
     }
 }

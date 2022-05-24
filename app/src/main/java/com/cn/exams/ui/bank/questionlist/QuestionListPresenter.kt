@@ -43,4 +43,8 @@ class QuestionListPresenter(
     override fun addQuestion() {
         view.requestAddQuestion()
     }
+
+    override fun addContest() {
+        view.requestAddContest()
+    }
 }

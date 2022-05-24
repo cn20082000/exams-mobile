@@ -18,6 +18,7 @@ import com.cn.exams.lib.task.TaskModule
 import com.cn.exams.ui.bank.edit.BankEditFragment
 import com.cn.exams.ui.bank.questionedit.QuestionEditFragment
 import com.cn.exams.ui.bank.questionlist.adapter.QuestionRecyclerAdapter
+import com.cn.exams.ui.contest.edit.ContestEditFragment
 
 class QuestionListFragment
     : BaseFragment<FragmentQuestionListBinding, QuestionListContract.Presenter>(),
@@ -138,6 +139,16 @@ class QuestionListFragment
             bundleOf(
                 QuestionEditFragment.ARGUMENT_MODE to QuestionEditFragment.MODE_ADD,
                 QuestionEditFragment.ARGUMENT_BANK_ID to oldBank.id
+            )
+        )
+    }
+
+    override fun requestAddContest() {
+        navigation.navigate(
+            R.id.action_fragment_question_list_to_fragment_contest_edit,
+            bundleOf(
+                ContestEditFragment.ARGUMENT_MODE to ContestEditFragment.MODE_ADD,
+                ContestEditFragment.ARGUMENT_BANK_ID to oldBank.id
             )
         )
     }

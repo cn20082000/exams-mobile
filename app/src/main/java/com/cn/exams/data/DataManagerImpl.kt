@@ -3,9 +3,11 @@ package com.cn.exams.data
 import com.cn.exams.data.remote.response.*
 import com.cn.exams.data.repository.AuthenticationRepository
 import com.cn.exams.data.repository.BankRepository
+import com.cn.exams.data.repository.ContestRepository
 import com.cn.exams.data.repository.QuestionRepository
 import com.cn.exams.lib.data.ResponseObject
 import com.cn.exams.util.enumi.BankScopeEnum
+import com.cn.exams.util.enumi.ContestScopeEnum
 import java.util.*
 
 class DataManagerImpl : DataManager {
@@ -13,6 +15,7 @@ class DataManagerImpl : DataManager {
     private val authRepo = AuthenticationRepository.getInstance()
     private val bankRepo = BankRepository.getInstance()
     private val questionRepo = QuestionRepository.getInstance()
+    private val contestRepo = ContestRepository.getInstance()
 
     override fun login(username: String, password: String): ResponseObject<LoginResponse> {
         return ResponseObject { authRepo.login(username, password, it) }
@@ -124,6 +127,29 @@ class DataManagerImpl : DataManager {
                 answer3,
                 answerId4,
                 answer4,
+                it
+            )
+        }
+    }
+
+    override fun createContest(
+        name: String,
+        password: String,
+        quantity: Int,
+        startAt: Date,
+        endAt: Date?,
+        scope: ContestScopeEnum,
+        bankId: Long
+    ): ResponseObject<ContestResponse> {
+        return ResponseObject {
+            contestRepo.createContest(
+                name,
+                password,
+                quantity,
+                startAt,
+                endAt,
+                scope,
+                bankId,
                 it
             )
         }

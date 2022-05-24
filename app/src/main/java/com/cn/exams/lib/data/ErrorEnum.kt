@@ -59,7 +59,10 @@ enum class ErrorEnum {
     // from android
     LOCAL_ERROR,
     INVALID_BIRTH_FORMAT,
-    INVALID_CF_PASSWORD
+    INVALID_CF_PASSWORD,
+    INVALID_START_FORMAT,
+    INVALID_END_FORMAT,
+    INVALID_END_BEFORE_START,
 }
 
 fun ErrorEnum.message(resources: Resources): String {
@@ -108,6 +111,9 @@ fun ErrorEnum.message(resources: Resources): String {
         ErrorEnum.LOCAL_ERROR -> resources.getString(R.string.unknown_error)
         ErrorEnum.INVALID_BIRTH_FORMAT -> resources.getString(R.string.invalid_birth_format)
         ErrorEnum.INVALID_CF_PASSWORD -> resources.getString(R.string.invalid_cf_password)
+        ErrorEnum.INVALID_START_FORMAT -> resources.getString(R.string.invalid_start_format)
+        ErrorEnum.INVALID_END_FORMAT -> resources.getString(R.string.invalid_end_format)
+        ErrorEnum.INVALID_END_BEFORE_START -> resources.getString(R.string.invalid_end_before_start)
 //        else -> resources.getString(R.string.unknown_error)
     }
 }

@@ -51,28 +51,28 @@ class QuestionEditFragment
     }
 
     private fun configRadio() {
-        binding.rbCorrect1.setOnCheckedChangeListener { btn, isChecked ->
+        binding.rbCorrect1.setOnCheckedChangeListener { _, isChecked ->
             if (isChecked) {
                 binding.rbCorrect2.isChecked = false
                 binding.rbCorrect3.isChecked = false
                 binding.rbCorrect4.isChecked = false
             }
         }
-        binding.rbCorrect2.setOnCheckedChangeListener { btn, isChecked ->
+        binding.rbCorrect2.setOnCheckedChangeListener { _, isChecked ->
             if (isChecked) {
                 binding.rbCorrect1.isChecked = false
                 binding.rbCorrect3.isChecked = false
                 binding.rbCorrect4.isChecked = false
             }
         }
-        binding.rbCorrect3.setOnCheckedChangeListener { btn, isChecked ->
+        binding.rbCorrect3.setOnCheckedChangeListener { _, isChecked ->
             if (isChecked) {
                 binding.rbCorrect2.isChecked = false
                 binding.rbCorrect1.isChecked = false
                 binding.rbCorrect4.isChecked = false
             }
         }
-        binding.rbCorrect4.setOnCheckedChangeListener { btn, isChecked ->
+        binding.rbCorrect4.setOnCheckedChangeListener { _, isChecked ->
             if (isChecked) {
                 binding.rbCorrect2.isChecked = false
                 binding.rbCorrect3.isChecked = false

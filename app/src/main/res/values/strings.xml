@@ -52,10 +52,22 @@
     <string name="question_content">Nội dung câu hỏi</string>
     <string name="explanation">Giải thích câu trả lời</string>
     <string name="answer_content">Nội dung câu trả lời</string>
-    <string name="question_quantity">Số lượng câu trả lời</string>
+    <string name="answer_quantity">Số lượng câu trả lời</string>
     <string name="generate">Tạo</string>
     <string name="add_answer">Thêm câu trả lời</string>
     <string name="answer_list">Danh sách câu trả lời:</string>
     <string name="update_success">Cập nhật thành công</string>
     <string name="update_question">Cập nhật câu hỏi</string>
+    <string name="new_contest">Thêm bài kiểm tra mới</string>
+    <string name="contest_name">Tên bài kiểm tra</string>
+    <string name="question_quantity">Số lượng câu hỏi</string>
+    <string name="start_at">Bắt đầu lúc</string>
+    <string name="end_at">Kết thúc lúc</string>
+    <string name="private_contest_des">Những người muốn tham gia cần nhập chính xác mã bài kiểm tra và mật khẩu để có thể tham gia.</string>
+    <string name="public_contest_des">Mọi người đều có thể nhìn thấy và tìm kiếm bài kiểm tra của bạn, tuy nhiên, để tham gia họ vẫn cần mật khẩu do bạn cung cấp.</string>
+    <string name="question_quantity_template">Số lượng câu hỏi: %1$d</string>
+    <string name="invalid_start_format">Định dạng ngày bắt đầu chưa đúng</string>
+    <string name="invalid_end_format">Định dạng ngày kết thúc chưa đúng</string>
+    <string name="invalid_end_before_start">Ngày bắt đầu không được lớn hơn ngày kết thúc</string>
+    <string name="add_contest_success">Tạo bài kiểm tra thành công</string>
 </resources>
